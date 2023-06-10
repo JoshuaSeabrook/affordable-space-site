@@ -55,42 +55,34 @@ const Header = () => {
                 About
               </a>
             </Link>
-            <LinkScroll
-              activeClass="active"
-              to="pricing"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("pricing");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "pricing"
-                  ? " text-green-500 animation-active "
-                  : " text-black-500 hover:text-green-500 ")
-              }
+            <Link
+              href="/"
             >
-              Properties 
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="testimoni"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("testimoni");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "testimoni"
-                  ? " text-green-500 animation-active "
-                  : " text-black-500 hover:text-green-500 ")
-              }
+              <a
+                className={
+                  "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                  (useRouter().pathname == "/properties"
+                    ? " text-green-500 animation-active "
+                    : " text-black-500 hover:text-green-500 a")
+                }
+              >
+                Properties
+              </a>
+            </Link>
+            <Link
+              href="/contact"
             >
-              Contact Us
-            </LinkScroll>
+              <a
+                className={
+                  "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                  (useRouter().pathname == "/contact"
+                    ? " text-green-500 animation-active "
+                    : " text-black-500 hover:text-green-500 a")
+                }
+              >
+                Contact Us
+              </a>
+            </Link>
           </ul>
         </nav>
       </header>
