@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Link as LinkScroll } from "react-scroll";
 import ButtonOutline from "../misc/ButtonOutline.";
 import LogoVPN from "../../public/assets/Logo.svg";
+import {useRouter} from "next/router";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -26,42 +27,34 @@ const Header = () => {
             <h1>Affordable<strong>Space</strong></h1>
           </div>
           <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
-            <LinkScroll
-              activeClass="active"
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("about");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "about"
-                  ? " text-green-500 animation-active "
-                  : " text-black-500 hover:text-green-500 a")
-              }
+            <Link
+              href="/"
             >
-              Home
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="feature"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("feature");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "feature"
-                  ? " text-green-500 animation-active "
-                  : " text-black-500 hover:text-green-500 ")
-              }
+              <a
+                className={
+                  "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                  (useRouter().pathname == "/"
+                    ? " text-green-500 animation-active "
+                    : " text-black-500 hover:text-green-500 a")
+                }
+              >
+                Home
+              </a>
+            </Link>
+            <Link
+              href="/about"
             >
-              About
-            </LinkScroll>
+              <a
+                className={
+                  "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                  (useRouter().pathname == "/about"
+                    ? " text-green-500 animation-active "
+                    : " text-black-500 hover:text-green-500 a")
+                }
+              >
+                About
+              </a>
+            </Link>
             <LinkScroll
               activeClass="active"
               to="pricing"
