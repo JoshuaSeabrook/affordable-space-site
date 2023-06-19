@@ -56,7 +56,7 @@ const Header = () => {
               </a>
             </Link>
             <Link
-              href="/"
+              href="/properties"
             >
               <a
                 className={
