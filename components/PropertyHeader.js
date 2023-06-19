@@ -4,6 +4,7 @@ import ButtonPrimary from "./misc/ButtonPrimary";
 import {motion} from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import Link from "next/link";
 
 const ContactUs = ({
   listUser = [
@@ -61,7 +62,13 @@ const ContactUs = ({
                 <br/>
                 <h1 className="text-3xl font-small text-black-600 leading-normal px-6">Semilong Road</h1>
                 <p className="px-6 py-5">A six bedroom terrace property over 4 floors, in a very popular student area.</p>
-                <div className="px-6 py-5 grid content-center"><ButtonPrimary>View & Book</ButtonPrimary></div>
+                <div className="px-6 py-5 grid content-center">
+                <Link
+              href="/properties/semilong" passHref
+            ><button className={
+                "py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-green-500 hover:shadow-green-md transition-all outline-none "
+              }>View & Book</button>
+            </Link></div>
               </div>
             </div>
             <div className="flex w-full">
