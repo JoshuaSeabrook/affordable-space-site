@@ -15,6 +15,8 @@ interface MapProps extends google.maps.MapOptions {
   onClick?: (e: google.maps.MapMouseEvent) => void;
   onIdle?: (map: google.maps.Map) => void;
   children?: ReactNode;
+  latitude: number;
+  longitude:number;
 }
 
 export default function Map({
@@ -22,6 +24,8 @@ export default function Map({
   onClick,
   onIdle,
   children,
+  latitude,
+  longitude,
   ...options
 }: MapProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,7 +36,14 @@ export default function Map({
       const googleMap = new window.google.maps.Map(ref.current, {
         styles: mapStyle,
       });
+      const testMarker = new google.maps.Marker({
+        position: {
+          lat: latitude,
+          lng: longitude,
+        },
+      });
       setMap(googleMap);
+      testMarker.setMap(googleMap);
     }
   }, [ref, map]);
 

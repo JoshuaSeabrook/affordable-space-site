@@ -1,7 +1,6 @@
 import { Status, Wrapper } from "@googlemaps/react-wrapper"
 import { useMemo } from "react"
 import Map from "../Map"
-import Marker from "../CustomMarker"
 
 const render = status => {
   if (status === Status.FAILURE) {
@@ -17,8 +16,8 @@ export default function GoogleMap({
   zoom,
   center,
   markers,
-  onMarkerClick,
-  highlightedMarkerId
+  latitude,
+  longitude
 }) {
   const filtered = useMemo(() => {
     return markers?.filter(m => m.location.latitude && m.location.longitude)
@@ -40,15 +39,9 @@ export default function GoogleMap({
           mapTypeControl={false}
           zoomControl={false}
           clickableIcons={false}
+          latitude={latitude}
+          longitude={longitude}
         >
-          {filtered?.map(hotel => (
-            <Marker
-              key={hotel.hotelId || hotel.pclnId}
-              hotel={hotel}
-              onClick={onMarkerClick}
-              highlight={hotel.hotelId === highlightedMarkerId}
-            />
-          ))}
         </Map>
       </Wrapper>
     </div>

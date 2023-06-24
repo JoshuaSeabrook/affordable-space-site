@@ -45,7 +45,7 @@ const ContactUs = ({
     >
       <ScrollAnimationWrapper>
           <div
-            className="grid grid-flow-row sm:grid-flow-col grid-rows-1 sm:grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 py-0 sm:py-0"
+            className="grid grid-flow-row sm:grid-flow-col grid-rows-2 grid-cols-1 md:grid-rows-1 sm:grid-cols-2 gap-8 py-6 sm:py-16"
             variants={scrollAnimation}>
             <div className=" flex flex-col justify-center items-start row-start-2 sm:row-start-1">
               <h1 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-black-600 leading-normal">
@@ -55,8 +55,8 @@ const ContactUs = ({
               Welcome to our stunning property located on Semilong Road. This impressive six-bedroom terrace spans across four floors, offering ample space for comfortable student living. Semilong Road boasts a rich history, showcasing its distinctive Edwardian and Victorian heritage. Conveniently situated, our house is just a short walk away from the community post office and the Co-op supermarket.<br/><br/>It's approximately a 25-minute walk to Waterside or a quick two-minute stroll to the Uno bus stop on Barrack Road. Semilong is a highly sought-after student area, known for its close proximity to the town center (just a ten-minute walk) and a vibrant atmosphere fueled by a thriving student population. Experience the energetic and youthful ambiance that sets Semilong apart from other areas in Northampton.
               </p>
             </div>
-            <div>
-              <Carousel className="gap-8 py-0 sm:py-0 mt-20 mx-5">
+            <div className="h-3/4 w-full max-w-screen-xl mt-24 px-0 xl:px-16 mx-0">
+              <Carousel>
                   <div>
                       <img src="/assets/PropertyImages/Semilong/1.jpg" alt="image1"/>
                   </div>
@@ -142,8 +142,8 @@ const ContactUs = ({
         </ScrollAnimationWrapper>
       </div>
       <hr/>
-      <div>
-        <p>Map</p>
+      <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 my-10 mx-10">
+        <h3 className="text-3xl lg:text-4xl font-medium leading-relaxed text-black-600">Map</h3>
       </div>
      </div>
             
